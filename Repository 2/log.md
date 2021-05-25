@@ -7,10 +7,7 @@
   * To fix this I would write ```barplot(counts, main="Publication Cities", xlab="Cities", ylab="Number of Articles")``` This would also add a proper Y-axis as well
 * When i was playing around with the graph types I created a line graph. I was having some troubles making it an actual line till i found the code ```type = "l"```
 
-![Publication Years 1](Publication Years 1.png)
   * some more playing around led me to changing the line colour with ```col = "red"``` and the line thickness with ```lwd = 2```
-
-![Publication Years 2](Publication Years 2.png)
 
 ## Wget
 
