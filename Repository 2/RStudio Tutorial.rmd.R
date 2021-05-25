@@ -1,0 +1,21 @@
+install.packages("RCurl")
+library("RCurl")
+x <- getURL("https://raw.githubusercontent.com/shawngraham/exercise/gh-pages/CND.csv", .opts = list(ssl.verifypeer = FALSE))
+x
+documents <- read.csv(text = x, col.names=c("Article_ID", "Newspaper Title", "Newspaper City", "Newspaper Province", "Newspaper Country", "Year", "Month", "Day", "Article Type", "Text", "Keywords"), colClasses=rep("character", 3), sep=",", quote="")
+View(documents)
+counts <- table(documents$Newspaper.City)
+counts
+write.csv(counts, "counts.csv")
+getwd()
+write.csv(counts, "counts.csv")
+getwd()
+write.csv(counts, "counts.csv")
+barplot(counts, main="Cities", xlab="Number of Articles")
+barplot(counts, main="Publication Cities", xlab="Cities", ylab="Number of Articles")
+years <- table(documents$Year)
+barplot(years, main="Publication Year", xlab="Year", ylab="Number of Articles")
+x
+plot(years, main="Publications over the Years", xlab="Year", ylab="Number of Articles")
+plot(years, main="Publications over the Years", xlab="Year", ylab="Number of Articles", type = "l")
+plot(years, main="Publications over the Years", xlab="Year", ylab="Number of Articles", type = "l", col = "red", lwd = 2)
